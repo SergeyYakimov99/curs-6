@@ -105,11 +105,11 @@ DJOSER = {
     'LOGIN_FIELD': 'email'
 }
 
-# SIMPLE_JWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(days=2),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
-#     'ROTATE_REFRESH_TOKENS': True
-# }
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=2),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
+    'ROTATE_REFRESH_TOKENS': True
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

@@ -18,7 +18,8 @@ class CommentSerializer(serializers.ModelSerializer):
 class AdSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ad
-        fields = ('pk', 'title', 'price', 'author')
+        # fields = ('pk', 'title', 'price', 'author')
+        fields = ('pk', 'title', 'price', 'description')
 
 
 class AdDetailSerializer(serializers.ModelSerializer):
@@ -27,4 +28,5 @@ class AdDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ad
-        fields = ('pk', 'title', 'price', 'author', 'author_first_name', 'author_last_name')
+        # fields = ('pk', 'title', 'price', 'author', 'author_first_name', 'author_last_name')
+        fields = ('pk', 'title', 'price', 'author', 'author_first_name', 'author_last_name', 'image')

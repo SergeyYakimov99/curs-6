@@ -11,7 +11,7 @@ class Ad(models.Model):
     author = models.ForeignKey('users.User', on_delete=models.CASCADE)
     price = models.PositiveIntegerField()
     description = models.TextField(null=True)
-    image = models.ImageField(upload_to='pictures', blank=True, null=True)
+    image = models.ImageField(upload_to='media/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
