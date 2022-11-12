@@ -18,15 +18,16 @@ class CommentSerializer(serializers.ModelSerializer):
 class AdSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ad
-        # fields = ('pk', 'title', 'price', 'author')
-        fields = ('pk', 'title', 'price', 'description')
+        fields = ('pk', 'title', 'price', 'description', 'image')
 
 
 class AdDetailSerializer(serializers.ModelSerializer):
+    author_id = serializers.IntegerField(source='author.id', read_only=True)
     author_first_name = serializers.CharField(source='author.first_name', read_only=True)
     author_last_name = serializers.CharField(source='author.last_name', read_only=True)
+    image = serializers.ImageField(source='ad.image', read_only=True)
 
     class Meta:
         model = Ad
         # fields = ('pk', 'title', 'price', 'author', 'author_first_name', 'author_last_name')
-        fields = ('pk', 'title', 'price', 'author', 'author_first_name', 'author_last_name', 'image')
+        fields = ('pk', 'title', 'price', 'author_id', 'author_first_name', 'author_last_name', 'image')
